@@ -68,5 +68,11 @@
 		"typedoc-plugin-remove-references": "^0.0.6",
 		"typescript": "^5.5.4",
 		"typescript-eslint": "^8.2.0"
+	},
+	"dependencies": {
+		"@babylonjs/core": "^7.22.1",
+		"eventemitter3": "^5.0.1",
+		"logzen": "^0.3.8",
+		"utilium": "^0.5.6"
 	}
 }
