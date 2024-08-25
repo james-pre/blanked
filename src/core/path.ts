@@ -1,7 +1,7 @@
-import { Vector3 } from '@babylonjs/core/Maths/math.vector.js';
-import type { IVector3Like } from '@babylonjs/core/Maths/math.like.js';
-import type { Entity } from './entity.js';
-import { roundVector } from './utils.js';
+import { Vector3 } from '@babylonjs/core/Maths/math.vector';
+import type { IVector3Like } from '@babylonjs/core/Maths/math.like';
+import type { Entity } from './entity';
+import { roundVector } from './utils';
 
 export class PathNode {
 	public position = Vector3.Zero();

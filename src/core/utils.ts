@@ -1,5 +1,5 @@
-import type { IVector3Like } from '@babylonjs/core/Maths/math.like.js';
-import { Vector2, Vector3 } from '@babylonjs/core/Maths/math.vector.js';
+import type { IVector3Like } from '@babylonjs/core/Maths/math.like';
+import { Vector2, Vector3 } from '@babylonjs/core/Maths/math.vector';
 import { Logger } from 'logzen';
 
 export const logger = new Logger({ noGlobalConsole: true });

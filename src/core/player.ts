@@ -1,7 +1,10 @@
-import type { EntityJSON } from './entity.js';
-import { Entity } from './entity.js';
+import type { EntityJSON } from './entity';
+import { Entity } from './entity';
 
-export interface PlayerJSON extends EntityJSON {}
+export interface PlayerJSON extends EntityJSON {
+	_: null;
+	// Nothing
+}
 
 export class Player extends Entity {
 	public get owner(): this {

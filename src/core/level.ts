@@ -1,11 +1,11 @@
-import type { IVector3Like } from '@babylonjs/core/Maths/math.like.js';
-import { PerformanceMonitor } from '@babylonjs/core/Misc/performanceMonitor.js';
+import type { IVector3Like } from '@babylonjs/core/Maths/math.like';
+import { PerformanceMonitor } from '@babylonjs/core/Misc/performanceMonitor';
 import { EventEmitter } from 'eventemitter3';
 import { assignWithDefaults, pick, randomHex } from 'utilium';
-import type { Component } from './component.js';
-import { Player, type PlayerJSON } from './player.js';
-import { logger } from './utils.js';
-import { Entity, filterEntities, type EntityJSON } from './entity.js';
+import type { Component } from './component';
+import { Player, type PlayerJSON } from './player';
+import { logger } from './utils';
+import { Entity, filterEntities, type EntityJSON } from './entity';
 
 export interface MoveInfo<T> {
 	id: string;
@@ -45,13 +45,9 @@ export abstract class Level extends EventEmitter<LevelEvents> implements Compone
 	public entities: Set<Entity> = new Set();
 	private _performanceMonitor = new PerformanceMonitor(60);
 
-	public async ready(): Promise<this> {
-		return this;
-	}
-
 	public getEntityByID<N extends Entity = Entity>(id: string): N {
 		for (const entity of this.entities) {
-			if (entity.id == id) return <N>entity;
+			if (entity.id == id) return entity as N;
 		}
 
 		throw new ReferenceError('Entity does not exist');
@@ -62,7 +58,7 @@ export abstract class Level extends EventEmitter<LevelEvents> implements Compone
 	}
 
 	public entity<T extends Entity = Entity>(selector: string): T {
-		return this.selectEntities(selector).values().next().value;
+		return [...this.selectEntities(selector)][0] as T;
 	}
 
 	public abstract tryAction(executorID: string, action: string, data: object): boolean;

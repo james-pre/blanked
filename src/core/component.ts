@@ -1,5 +1,5 @@
-import type { Level } from './level.js';
-import { logger } from './utils.js';
+import type { Level } from './level';
+import { logger } from './utils';
 
 export interface Component<TJSON = unknown> {
 	readonly id?: string;
