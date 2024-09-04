@@ -108,7 +108,8 @@ export class Entity
 	 * @param isRelative Wheter the target is a change to the current position (i.e. a "delta" vector) or absolute
 	 */
 	public moveTo(target: IVector3Like, isRelative = false) {
-		const path = findPath(this.absolutePosition, (isRelative ? this.absolutePosition : Vector3.Zero()).add(target));
+		const { x, y, z } = target;
+		const path = findPath(this.absolutePosition, new Vector3(x, y, z).add(isRelative ? this.absolutePosition : Vector3.Zero()));
 		if (!path.length) {
 			return;
 		}

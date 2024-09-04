@@ -3,7 +3,7 @@
 		"module": "ESNext",
 		"target": "ES2020",
 		"outDir": "dist",
-		"lib": ["ESNext", "ESNext.Disposable"],
+		"lib": ["ESNext", "ESNext.Disposable", "DOM"],
 		"moduleResolution": "Bundler",
 		"declaration": true,
 		"strict": true
