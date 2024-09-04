@@ -17,15 +17,15 @@
 		"eslint.shared.js"
 	],
 	"type": "module",
-	"homepage": "https://github.com/__repo__",
+	"homepage": "https://github.com/james-pre/blanked",
 	"author": "James Prevett <jp@jamespre.dev> (https://jamespre.dev)",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/__repo__.git"
+		"url": "git+https://github.com/james-pre/blanked.git"
 	},
 	"bugs": {
-		"url": "https://github.com/__repo__/issues"
+		"url": "https://github.com/james-pre/blanked/issues"
 	},
 	"engines": {
 		"node": ">= 16"
@@ -37,7 +37,7 @@
 	"scripts": {
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"lint": "tsc -p tsconfig.json --noEmit && eslint src tests",
+		"lint": "tsc -p tsconfig.json --noEmit && eslint src",
 		"test": "tsc -p tests/tsconfig.json && cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
 		"build": "node scripts/build.js --entry src/index.ts",
 		"build:docs": "typedoc",
