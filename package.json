@@ -73,6 +73,6 @@
 		"@babylonjs/core": "^7.22.1",
 		"eventemitter3": "^5.0.1",
 		"logzen": "^0.3.8",
-		"utilium": "^0.5.9"
+		"utilium": "^0.5.10"
 	}
 }
