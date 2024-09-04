@@ -8,7 +8,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default {
-	name: 'gefe',
+	name: 'blanked',
 	extends: [eslint.configs.recommended, ...tseslint.configs.recommendedTypeChecked],
 	files: ['src/**/*.ts', 'tests/**/*.ts'],
 	languageOptions: {

@@ -13,7 +13,7 @@
 	"typedocOptions": {
 		"entryPoints": ["./src/index.ts"],
 		"out": "docs",
-		"name": "gefe",
+		"name": "blanked",
 		"plugin": ["typedoc-plugin-remove-references"]
 	}
 }
