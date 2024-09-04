@@ -61,9 +61,7 @@ function getLeastExpensiveNode(nodes: Iterable<PathNode>): PathNode {
  * @param entities The list of entities to check for collisions against
  * @returns The path to traverse
  */
-export function findPath(start: Vector3, end: Vector3, entities: Iterable<Entity> = []): Vector3[] {
-	if (!(start instanceof Vector3)) throw new TypeError('Start must be a Vector');
-	if (!(end instanceof Vector3)) throw new TypeError('End must be a Vector');
+export function findPath(start: IVector3Like, end: IVector3Like, entities: Iterable<Entity> = []): Vector3[] {
 	const openNodes: Map<string, PathNode> = new Map();
 	const closedNodes: Map<string, PathNode> = new Map();
 	const startNode: PathNode = new PathNode(start);
