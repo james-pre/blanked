@@ -5,6 +5,10 @@ export interface GroupJSON extends EntityJSON {
 	members: string[];
 }
 
+/**
+ * A group of entities
+ * Note: When parsing from JSON, the members' should add themselves to the group
+ */
 @component
 export class Group<T extends Entity, TOwner extends Entity = Entity> extends Entity {
 	protected entities: Set<T> = new Set();
@@ -60,6 +64,4 @@ export class Group<T extends Entity, TOwner extends Entity = Entity> extends Ent
 			members: Array.from(this).map(s => s.id),
 		};
 	}
-
-	// NOTE: The member's fromJSON should add the member to the group
 }
