@@ -2,6 +2,7 @@ import { spawn } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { Socket } from 'socket.io';
+import { getAccount } from '../api/frontend/index.js';
 import { config as coreConfig } from '../core/config.js';
 import { Level, levelEventNames, type LevelJSON } from '../core/level';
 import { Client, addClient, clients, getClientByID } from './clients';
@@ -123,7 +124,7 @@ export async function checkClientAuth(socket: Socket): Promise<undefined> {
 		throw 'Server is stopping or restarting';
 	}
 
-	const account = await getAccount('token', socket.handshake.auth.token).catch((error: Error | string) => {
+	const account = await getAccount('token', socket.handshake.auth.token).catch((error: string) => {
 		logger.warn('API request for client authentication failed: ' + error);
 		throw 'Authentication request failed';
 	});

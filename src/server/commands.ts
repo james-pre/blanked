@@ -5,6 +5,7 @@ import * as server from './server';
 import { blacklist } from './config';
 import { getClientByName } from './clients';
 import { logger } from './utils';
+import { getAccount } from '../api/frontend';
 
 export interface ServerCommandExecutionContext extends CommandExecutionContext {
 	executor: Client;

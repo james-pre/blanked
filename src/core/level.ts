@@ -39,7 +39,7 @@ export function setLoadingOrder(order: (typeof Entity)[]) {
 	loadingOrder = order;
 }
 
-export abstract class Level extends EventEmitter<LevelEvents> implements Component<LevelJSON> {
+export class Level extends EventEmitter<LevelEvents> implements Component<LevelJSON> {
 	public id: string = randomHex(16);
 	public name: string = '';
 	public date = new Date();
@@ -62,8 +62,6 @@ export abstract class Level extends EventEmitter<LevelEvents> implements Compone
 	public entity<T extends Entity = Entity>(selector: string): T {
 		return [...this.selectEntities(selector)][0] as T;
 	}
-
-	public abstract tryAction(executorID: string, action: string, data: object): boolean;
 
 	// events and ticking
 	public get tps(): number {
