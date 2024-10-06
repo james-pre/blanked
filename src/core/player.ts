@@ -1,10 +1,7 @@
 import type { EntityJSON } from './entity';
 import { Entity } from './entity';
 
-export interface PlayerJSON extends EntityJSON {
-	_: null;
-	// Nothing
-}
+export type PlayerJSON = EntityJSON;
 
 export class Player extends Entity {
 	public get owner(): this {

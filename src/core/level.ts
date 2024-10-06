@@ -31,6 +31,8 @@ export interface LevelEvents {
 	update: [];
 }
 
+export const levelEventNames = ['entity_added', 'entity_removed', 'entity_death', 'entity_path_start', 'player_reset', 'update'] as const satisfies readonly (keyof LevelEvents)[];
+
 export let loadingOrder: (typeof Entity)[] = [Player, Entity];
 
 export function setLoadingOrder(order: (typeof Entity)[]) {

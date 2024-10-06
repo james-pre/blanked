@@ -38,7 +38,7 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"lint": "tsc -p tsconfig.json --noEmit && eslint src",
-		"test": "tsc -p tests/tsconfig.json && cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
+		"test": "tsx --test --experimental-test-coverage",
 		"build": "node scripts/build.js --entry src/index.ts",
 		"build:docs": "typedoc",
 		"dev": "npm run build -- --watch",
@@ -52,18 +52,13 @@
 	"devDependencies": {
 		"@eslint/js": "^9.9.0",
 		"@fal-works/esbuild-plugin-global-externals": "^2.1.2",
-		"@jest/globals": "^29.7.0",
 		"@stylistic/eslint-plugin": "^2.6.4",
 		"@types/eslint__js": "^8.42.3",
-		"@types/jest": "^29.5.12",
-		"cross-env": "^7.0.3",
 		"esbuild": "^0.23.1",
 		"eslint": "^9.9.0",
 		"globals": "^15.9.0",
-		"jest": "^29.7.0",
 		"lint-staged": "^15.2.9",
 		"prettier": "^3.3.3",
-		"ts-jest": "^29.2.4",
 		"typedoc": "^0.26.6",
 		"typedoc-plugin-remove-references": "^0.0.6",
 		"typescript": "^5.5.4",
@@ -73,6 +68,7 @@
 		"@babylonjs/core": "^7.22.1",
 		"eventemitter3": "^5.0.1",
 		"logzen": "^0.3.8",
-		"utilium": "^0.5.10"
+		"socket.io": "^4.7.5",
+		"utilium": "^0.7.2"
 	}
 }
